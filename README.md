@@ -212,3 +212,8 @@ Aqui está um resumo dos comandos para executar com o Maven Wrapper:
 Isso exibirá a versão do Maven configurada no wrapper.
 
 Seguindo esses comandos, você poderá gerenciar a construção, execução e teste de sua aplicação Spring Boot de maneira eficaz usando o Maven Wrapper. Se tiver mais perguntas ou precisar de mais ajuda, estou aqui para ajudar!
+
+
+## Acessar o APP via navegador
+
+Acesse `http://localhost:9090/` e faça login com `demo` / `demo`.
