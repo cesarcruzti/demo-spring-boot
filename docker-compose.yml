@@ -19,10 +19,26 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
       PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "8080:80"
     networks:
       - my_network
+    ports:
+      - "8080:80"
+    
+  
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rabbitmq
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - my_network
+    ports:
+      - "5672:5672"   # Porta padrão para AMQP
+      - "15672:15672" # Porta padrão para a interface de gerenciamento
+      - "5552:5552"   # Porta para RabbitMQ Streams
+
 
 networks:
   my_network:
@@ -30,3 +46,4 @@ networks:
 
 volumes:
   postgres_data:
+  rabbitmq_data:
